@@ -1,0 +1,56 @@
+{
+	"name": "seunex17/paystack-ci4",
+	"description": "Paystack for Codeigniter4",
+	"license": "MIT",
+	"type": "library",
+	"keywords": [
+		"codeigniter",
+		"codeigniter4",
+		"payment",
+		"gateway",
+		"paystack"
+	],
+	"autoload": {
+		"psr-4": {
+			"Seunex17\\PaystackCi4\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "seunex17",
+			"email": "seunexseun@gmail.com",
+			"role": "Developer"
+		}
+	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"require-dev": {
+		"codeigniter4/devkit": "^1.1",
+		"phpunit/phpunit": "^9.1",
+		"codeigniter4/framework": "^4.2"
+	},
+	"config": {
+		"allow-plugins": {
+			"phpstan/extension-installer": true
+		},
+		"sort-packages": true
+	},
+	"scripts": {
+		"cs": "php-cs-fixer fix --ansi --verbose --diff",
+		"test": "phpunit",
+		"analyze": [
+			"phpstan analyze",
+			"psalm",
+			"rector process --dry-run"
+		]
+	},
+	"require": {
+		"php": "^7.4.3 || ^8.0"
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\": "tests",
+			"Tests\\Support\\": "tests/_support"
+		}
+	}
+}
